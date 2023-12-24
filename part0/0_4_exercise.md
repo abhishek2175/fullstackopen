@@ -3,9 +3,9 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note with payload
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note with new note as payload
     activate server
-    server-->>browser: Redirect url: /exampleapp/notes
+    server-->>browser: Redirect url 302 code: /exampleapp/notes
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
